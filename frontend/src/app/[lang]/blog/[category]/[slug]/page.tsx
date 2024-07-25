@@ -42,6 +42,7 @@ async function getMetaData(slug: string) {
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+    try {
     const meta = await getMetaData(params.slug);
     const metadata = meta[0].attributes.seo;
 
@@ -49,6 +50,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         title: metadata.metaTitle,
         description: metadata.metaDescription,
     };
+
+    } catch (error) {
+        // Note an error here normally means a misconfigured url in the data
+        console.error("ERROR (generateMetadata) Check url containing ",params, error)
+        throw error;
+    }
 }
 
 export default async function PostRoute({ params }: { params: { slug: string } }) {

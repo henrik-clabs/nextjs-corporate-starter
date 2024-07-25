@@ -17,11 +17,11 @@ interface MobileNavLink extends NavLink {
   closeMenu: () => void;
 }
 
-function NavLink({ url, text }: NavLink) {
+function NavLink({url, text, id}: NavLink) {
   const path = usePathname();
 
   return (
-    <li className="flex">
+    <li className="flex" key={`${id}`}>
       <Link
         href={url}
         className={`flex items-center mx-4 -mb-1 border-b-2 dark:border-transparent ${

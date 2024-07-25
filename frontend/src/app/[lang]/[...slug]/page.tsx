@@ -13,14 +13,21 @@ type Props = {
 
 
 export async function generateMetadata({params}: Props): Promise<Metadata> {
-    const page = await getPageBySlug(params.slug, params.lang);
-
-    if (!page.data[0].attributes?.seo) return FALLBACK_SEO;
-    const metadata = page.data[0].attributes.seo
-
-    return {
-        title: metadata.metaTitle,
-        description: metadata.metaDescription
+    try {
+        const page = await getPageBySlug(params.slug, params.lang);
+    
+        if (!page.data[0].attributes?.seo) return FALLBACK_SEO;
+        const metadata = page.data[0].attributes.seo
+    
+        return {
+            title: metadata.metaTitle,
+            description: metadata.metaDescription
+        }
+            
+    } catch (error) {
+        // Note an error here normally means a misconfigured url in the data
+        console.error("ERROR (generateMetadata) Check url containing ",params, error)
+        throw error;
     }
 }
 

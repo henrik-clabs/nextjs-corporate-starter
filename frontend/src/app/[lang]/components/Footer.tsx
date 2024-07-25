@@ -22,10 +22,10 @@ interface CategoryLink {
   };
 }
 
-function FooterLink({ url, text }: FooterLink) {
+function FooterLink({ id, url, text }: FooterLink) {
   const path = usePathname();
   return (
-    <li className="flex">
+    <li className="flex" key={id}>
       <Link
         href={url}
         className={`hover:dark:text-violet-400 ${
@@ -38,9 +38,9 @@ function FooterLink({ url, text }: FooterLink) {
   );
 }
 
-function CategoryLink({ attributes }: CategoryLink) {
+function CategoryLink({ id, attributes }: CategoryLink) {
   return (
-    <li className="flex">
+    <li className="flex" key={id}>
       <Link
         href={`/blog/${attributes.slug}`}
         className="hover:dark:text-violet-400"
