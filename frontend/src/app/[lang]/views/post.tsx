@@ -31,14 +31,18 @@ interface Article {
         };
         blocks: any[];
         publishDate: string;
+        publishedAt: string;
     };
 }
 
 export default function Post({ data }: { data: Article }) {
-    const { title, description, publishDate, cover, authorsBio } = data.attributes;
+    const { title, description, publishDate, publishedAt, cover, authorsBio } = data.attributes;
     const author = authorsBio.data?.attributes;
     const imageUrl = getStrapiMedia(cover.data?.attributes.url);
     const authorImgUrl = getStrapiMedia(authorsBio.data?.attributes.avatar.data.attributes.url);
+
+    var usePublishDate = publishDate
+    if (!publishDate) usePublishDate=publishedAt
 
     return (
         <article className="space-y-8 dark:bg-black dark:text-gray-50">
@@ -65,7 +69,7 @@ export default function Post({ data }: { data: Article }) {
                             />
                         )}
                         <p className="text-md dark:text-violet-400">
-                            {author && author.name} • {formatDate(publishDate)}
+                            {author && author.name} • {formatDate(usePublishDate)}
                         </p>
                     </div>
                 </div>
