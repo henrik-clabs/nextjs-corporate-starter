@@ -62,7 +62,7 @@
       "component": "shared.seo"
     },
     "publishDate": {
-      "type": "date"
+      "type": "datetime"
     }
   }
 }

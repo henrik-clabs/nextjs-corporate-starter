@@ -11,6 +11,7 @@ interface Article {
     createdAt: string;
     updatedAt: string;
     publishedAt: string;
+    publishDate: string;
     cover: {
       data: {
         attributes: {
@@ -97,7 +98,7 @@ export default function PostList({
 
                 <div className="flex justify-between items-center">
                   <span className="text-xs dark:text-gray-400">
-                    {formatDate(article.attributes.publishedAt)}
+                    {formatDate(article.attributes.publishDate)}
                   </span>
                   {authorsBio && (
                     <span className="text-xs dark:text-gray-400">

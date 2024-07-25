@@ -43,6 +43,7 @@ export interface Attribute {
 	createdAt: string;
 	updatedAt: string;
 	publishedAt: string;
+	publishDate: string;
 	locale: string;
 	heading?: any;
 	description?: any;

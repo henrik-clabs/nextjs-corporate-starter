@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-07-25T20:37:02.426Z"
+    "x-generation-date": "2024-07-25T20:47:53.913Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -167,7 +167,7 @@
               },
               "publishDate": {
                 "type": "string",
-                "format": "date"
+                "format": "date-time"
               }
             }
           }
@@ -1791,7 +1791,7 @@
                                     },
                                     "publishDate": {
                                       "type": "string",
-                                      "format": "date"
+                                      "format": "date-time"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -1941,7 +1941,7 @@
           },
           "publishDate": {
             "type": "string",
-            "format": "date"
+            "format": "date-time"
           },
           "createdAt": {
             "type": "string",
@@ -4227,7 +4227,7 @@
                         },
                         "publishDate": {
                           "type": "string",
-                          "format": "date"
+                          "format": "date-time"
                         },
                         "createdAt": {
                           "type": "string",
@@ -5911,7 +5911,7 @@
                         },
                         "publishDate": {
                           "type": "string",
-                          "format": "date"
+                          "format": "date-time"
                         },
                         "createdAt": {
                           "type": "string",
@@ -8366,7 +8366,7 @@
                                       },
                                       "publishDate": {
                                         "type": "string",
-                                        "format": "date"
+                                        "format": "date-time"
                                       },
                                       "createdAt": {
                                         "type": "string",
