@@ -804,7 +804,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     description: Attribute.Text &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
-        maxLength: 256;
+        maxLength: 512;
       }>;
     slug: Attribute.UID<'api::article.article', 'title'>;
     cover: Attribute.Media<'images' | 'files' | 'videos'>;
